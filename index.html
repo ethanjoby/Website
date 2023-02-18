@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Ethan's Portfolio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel = "stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel = "stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel = "stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-colors-highway.css">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<script rel = "preload"src="jquery-2.1.4.js"></script>
+<script src="jquery-3.6.0.min.js"></script>
+<script src = "https://smtpjs.com/v3/smtp.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<script src="https://kit.fontawesome.com/c1a3578cd7.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-colors-2021.css">
+<style>
+
+body,h1,h2,h3,h4,h5,h6,p {font-family: "Lato", sans-serif; color:white; -webkit-transition: all 1s ease;transition: all 1s ease;}
+
+/* Create a Parallax Effect */
+.bgimg-1, .bgimg-2, .bgimg-3 {
+  background-attachment: fixed;
+  background-position: center;
+  background-position:fixed;
+  background-repeat: no-repeat;
+  background-size:calc();
+}
+
+/* First image (Logo. Full height) */
+.bgimg-1 {
+  background-image: url("images/background2.gif");
+  background-color:white;
+  min-height: 100%;
+  height: 700px;
+  background-attachment: fixed;
+  
+}
+.parent{
+  mask-image: linear-gradient(to bottom, hsl(180, 2%, 10%),  50%, transparent 100%);
+}
+#myNavbar{
+  font-size: 20px;
+}
+/* Second image (Portfolio) */
+.bgimg-2 {
+  background-image: url("/w3images/parallax2.jpg");
+  height: 200px;
+}
+.bgimg-4{
+  height: 400px;
+}
+/* Third image (Contact) */
+.bgimg-3 {
+  background-image: url("/w3images/parallax3.jpg");
+  min-height: 400px;
+}
+
+.w3-wide {letter-spacing: 10px;}
+.w3-hover-opacity {cursor: pointer;}
+
+/* Turn off parallax scrolling for tablets and phones */
+@media only screen and (max-device-width: 1600px) {
+  .bgimg-1, .bgimg-2, .bgimg-3 {
+    background-attachment: scroll;
+    min-height: 400px;
+  }
+}
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  background: hsl(180, 2%, 10%);
+  text-align: center;
+  line-height: 1.8;
+}
+.image{
+  box-shadow: 0.5rem 0.5rem #ccc;
+  transition: 0.6s;
+}
+.image:hover{
+  box-shadow: 1rem 1rem #ccc;
+}
+#loader {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    overflow: visible;
+    background: white url('https://i.pinimg.com/originals/bb/40/dc/bb40dca49069c7922513d4c6239338d5.gif') no-repeat center center;
+    
+}
+.text{
+  background-color: hsl(180, 2%, 10%);
+}
+.sometext{
+  font-size:50px;
+  text-align:right;
+}
+.refresh{
+  font-family: 'Caveat', cursive;
+  cursor: url("https://cdn.dribbble.com/users/2024706/screenshots/4520414/media/249a5462e2f13b0e0a1a3e6c5db9d3f1.gif") auto;
+}
+.refresh:hover{
+  color:goldenrod;
+  cursor: url("https://cdn.dribbble.com/users/2024706/screenshots/4520414/media/249a5462e2f13b0e0a1a3e6c5db9d3f1.gif") auto;
+}
+.reload{
+  font-family: 'Rajdhani', sans-serif;
+}
+.title{
+  font-family: 'Caveat', cursive;
+  color:goldenrod;
+  font-size: 20px;
+}
+.reload:hover{
+  color:white;
+}
+.hobby{
+  font-family: "Lato", sans-serif;
+}
+.hobbies{
+  font-family: 'Caveat', cursive;
+  color:black;
+  padding:0px;
+  margin:0px;
+}
+.line{
+  border-right: 1px solid black;
+  height: 200px;
+  
+  margin-right: 10px;
+  margin-bottom: 0px;
+}
+.intro-text.active{
+    animation: typeIn 4s steps(10) forwards;
+}
+@keyframes typeIn {
+    to { width: 28ch; }
+}
+.rotate {
+text-decoration: none;
+transform: rotate(90deg);
+margin-bottom: 10px;
+
+/* Legacy vendor prefixes that you probably don't need... */
+
+/* Safari */
+-webkit-transform: rotate(90deg);
+
+/* Firefox */
+-moz-transform: rotate(90deg);
+
+/* IE */
+-ms-transform: rotate(90deg);
+
+/* Opera */
+-o-transform: rotate(90deg);
+
+/* Internet Explorer */
+filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+
+}
+.navbar:hover{
+  border-radius: 10px;
+  background-color: black;
+  color:white;
+}
+#sticky-line-left {
+    bottom: 0;
+    position: sticky;
+    margin-left: 3%;
+    display: block;
+}
+
+#sticky-line-right {
+    bottom: 0;
+    position: sticky;
+    margin-right: 3%;
+    display: block;
+}
+
+#github {
+    margin-left: -8px;
+    display: block;
+}
+
+#linkedin {
+    margin-left: -8px;
+    display: block;
+}
+
+#left-line {
+    border-left: 2px solid black;
+    height: 200px;
+    bottom: 0;
+    position: sticky;
+    display: block;
+}
+#right-line {
+    border-right: 2px solid black;
+    height: 500px;
+    bottom: 0;
+    position: sticky;
+    display: block;
+}
+/*some boxes*/
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.box {
+  width: 276px;
+  height: 500px;
+  margin: 20px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  position: relative;
+  transition: transform 0.2s ease-in-out;
+  background-color: whitesmoke;
+  color:black;
+}
+
+.box:hover {
+  transform: translateY(-10px);
+  transition: 0.6s;
+}
+
+.top-left,
+.top-right {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+}
+
+.top-left {
+  top: 10px;
+  left: 5px;
+}
+
+.top-right {
+  top: 10px;
+  right: 10px;
+}
+.bottom{
+  position:absolute;
+  bottom: 10px;
+  width:100%;
+  font-size:x-small;
+}
+
+.box p {
+  padding: 20px;
+  font-size: 16px;
+  text-align: center;
+  color:black;
+}
+.something:hover{
+  transform: translateY(-5px);
+  transition:0.3s;
+}
+
+</style>
+</head>
+<body>
+<div id="loader" rel = "preload"></div>
+<div class = "preload"></div>
+<!-- Navbar (sit on top) -->
+<!--<div class = "w3-bottom w3-text-grey rotate" style = "right:0px; height: 1300px;"><a href = "mailto:ethanawesome07@gmail.com? subject = Website User" class = "rotate">ethanawesome07@gmail.com</a></div>-->
+
+<!-- First Parallax Image with Logo Text -->
+<div class="bgimg-1 w3-display-container" onclick = "helloWorld"id="home" style = "-webkit-transition: all 1s ease;transition: all 1s ease;">
+  
+  <div class = " " style = "-webkit-transition: all 1s ease;transition: all 1s ease;">
+    <div class="w3-bar" id="myNavbar" style = "-webkit-transition: all 1s ease;transition: all 1s ease;">
+      <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
+        <i class="fa fa-bars"></i>
+      </a>
+      <a onclick = "window.location.reload();" style = "cursor: grab;color:black;" class="reload w3-bar-item w3-hide-small w3-hover-text-blue-grey"><img src = "images/logo.png" style = "width:25px; padding-bottom:8px;"/>  Ethan Varghese</a>
+
+      <a href="#contact" style = "color:black"class="navbar w3-bar-item w3-button w3-hide-small w3-right w3-text-goldenrod" style = "-webkit-transition: all 1s ease;transition: all 1s ease;"><i class="fa fa-envelope"></i> CONTACT</a>
+      <a href="#portfolio" style = "color:black"class="navbar w3-bar-item w3-button w3-hide-small w3-right w3-text-goldenrod" style = "-webkit-transition: all 0.5s ease;transition: all 0.5s ease;"><i class="fa fa-th"></i> PORTFOLIO</a>
+      <a href="#about" style = "color:black"class="navbar w3-bar-item w3-button w3-hide-small w3-right w3-text-goldenrod" style = "-webkit-transition: all 0.5s ease;transition: all 0.5s ease;"><i class="fa fa-user"></i> ABOUT</a>
+    </div>
+      
+      
+      
+    <!-- Navbar on small screens -->
+    <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
+      <a href="#about" class="w3-bar-item w3-button" onclick="toggleFunction()">ABOUT</a>
+      <a href="#portfolio" class="w3-bar-item w3-button" onclick="toggleFunction()">PORTFOLIO</a>
+      <a href="#contact" class="w3-bar-item w3-button" rel = "preload" onclick="toggleFunction()">CONTACT</a>
+    </div>
+  </div>
+ 
+  
+  <!--
+  <div id = "sticky-line-left" style = "display:flex;flex-direction: column; color:black;width:1%;position:fixed;">
+    <div style = "bottom: 80px;position: sticky; display:flex;flex-direction: column;text-align: left;margin-bottom:10px;" class = "w3-display-left">
+    <i class="fa fa-facebook-official w3-hover-text-amber something"></i><br>
+    <i class="fa fa-instagram w3-hover-text-amber something"></i><br>
+    <i class="fa fa-snapchat w3-hover-text-amber something"></i><br>
+    <i class="fa fa-pinterest-p w3-hover-text-amber something"></i><br>
+    <i class="fa fa-twitter w3-hover-text-amber something"></i><br>
+    <i class="fa fa-linkedin w3-hover-text-amber something"></i><br>
+    </div>
+    <div id = "left-line" class = ""style = "margin-left:5px;border-left-color: black;"></div>
+  </div>
+  <div id = "sticky-line-right" style = "display:flex;flex-direction: column; color:white;width:1%;position:fixed;">
+    <div id = "right-line" style = "margin-right:5px;border-left-color: white;"></div>
+  </div>
+-->
+  
+
+</div>
+
+<!-- Container (About Section) -->
+<div class="w3-content w3-container w3-padding-64">
+  
+
+  <div class="w3-row " id = "about">
+    <div rel = "preload" class="bgimg-3 w3-display-container w3-opacity-min" id = "about">
+      <div class="w3-display-middle">
+         <span class="w3-xxlarge w3-text-white w3-wide"><i class="fa fa-user"></i>ABOUT ME</span>
+      </div>
+    </div>
+    <div class="w3-col m6 w3-center w3-padding-large ">
+      <img src="images/me.JPG" class="image w3-round w3-image w3-opacity w3-hover-opacity-off " alt="Photo of Me" width="500" height="333"><br><br>
+      <h3><b><i class="fa fa-user w3-margin-right"></i>Ethan Varghese</b></h3>
+    </div>
+
+    <!-- Hide this text on small devices -->
+    
+    <div class="w3-col m6 w3-hide-small w3-padding-large more-stuff-grid">
+      <!--<p class="w3-center" class = "intro-text" style = "font-family: 'Rajdhani', sans-serif;"><em style = "font-family: 'Rajdhani', sans-serif;">WHO AM I?</em></p>-->
+      <br><br><br>
+      <h3 class="w3-center">Who Am I?</h3>
+      <p class = "">Hello, I'm Ethan Varghese, a passionate and ambitious sophomore at Foothill High School. The world of coding, algorithms, and AI has captured my imagination and I've been spending countless hours exploring these fields, engrossed in the complexity and challenge they present. The soft glow of my computer screen at night often envelops me as I lose track of time, immersed in my latest coding project.
+
+        When I'm not coding, I like to stay active and engaged in other activities. On the tennis court, I can feel the warmth of the sun on my skin and hear the satisfying sound of the ball hitting the racket strings. Playing the piano provides a different kind of sensory experience, as I can feel the smooth keys beneath my fingertips and lose myself in the delicate notes and melodies.
+        
+        Exploring these passions brings balance to my life, allowing me to express myself in different ways and stay engaged in the world around me. I'm grateful for the opportunities I've had so far to pursue these interests, and I look forward to discovering where my passions will take me next.</p>
+    </div>
+  </div>
+  <p class="w3-large w3-center w3-padding-16">My Hobbies:</p>
+  <p class="w3-wide"><i class="fa fa-piano hobby"></i>Piano</p>
+  <div class="w3-white ">
+    <div class="w3-container w3-padding-small w3-center w3-highway-blue w3-text-amber" style="width:90%; color:white">90%</div>
+  </div>
+  <p class="w3-wide "><i class="fa fa-laptop "></i>Coding</p>
+  <div class="w3-white">
+    <div class="w3-container w3-padding-small w3-highway-blue w3-center w3-text-amber" style="width:85%">85%</div>
+  </div>
+  <p class="w3-wide"><i class="fa fa-"></i>Tennis</p>
+  <div class="w3-white">
+    <div class="w3-container w3-padding-small w3-highway-blue w3-center w3-text-amber" style="width:75%">75%</div>
+  </div>
+</div>
+
+<div class="w3-row w3-center w3-white w3-padding-16  hobby" style = "font-size: 30px; -webkit-transition: all 1s ease;transition: all 1s ease;">
+  <div class="w3-quarter w3-section">
+    <span class="w3-xlarge ">4+</span><br>
+    <p class = "hobbies" >Coding Experience</p>
+  </div>
+  <div class="w3-quarter w3-section">
+    <span class="w3-xlarge ">30+</span><br>
+    <p class = "hobbies" >Projects Done</p>
+  </div>
+  <div class="w3-quarter w3-section">
+    <span class="w3-xlarge ">89+</span><br>
+    <p class = "hobbies" >Happy Clients</p>
+  </div>
+  <div class="w3-quarter w3-section">
+    <span class="w3-xlarge ">150+</span><br>
+    <p class = "hobbies" >Meetings</p>
+  </div>
+</div>
+
+<!-- Second Parallax Image with Portfolio Text -->
+<div class="bgimg-2 w3-display-container w3-opacity-min">
+  <div class="w3-display-middle" id="portfolio">
+    <span class="w3-xxlarge w3-text-white w3-wide"><i class="fa fa-th"></i>PORTFOLIO</span>
+  </div>
+</div>
+
+<!-- Container (Portfolio Section) -->
+<div class="w3-content w3-container w3-padding-64" >
+  <h3 class="w3-center">MY WORK</h3>
+  <a style = "text-decoration:none;" class = "w3-hover-text-blue" href = "Resume.pdf" download><i class = "fa fa-download "></i>      Resume</a><br>
+  <br><br>
+  <div class="w3-row">
+    <div class="w3-col m6 w3-center w3-padding-large">
+      <video width="420" height="700" class="image w3-round w3-image w3-hover-opacity-off w3-opacity-min" controls>
+        <source src="ICURO.mp4" type="video/mp4">
+      </video>
+    </div>
+
+    <!-- Hide this text on small devices -->
+    <div class="w3-col m6 w3-hide-small w3-padding-large">
+      <p>Welcome to my website. I am lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+        dolor in reprehenderit in voluptate velit esse cillu</p>
+    </div>
+  </div>
+  <br><br>
+  <!--
+  <div class="w3-row">
+
+    <div class="w3-col m6 w3-hide-small w3-padding-large">
+      <br><br><br><br><br><br>
+      <h3 class="w3-center">Flower Detection</h3>
+      <p>Welcome to my website. I am lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+        dolor in reprehenderit in voluptate velit esse cillu</p>
+    </div>
+
+
+    <div class="w3-col m6 w3-center w3-padding-large">
+      <a target = "_blank" href = "https://colab.research.google.com/drive/10bejMsAJvQ9e_uWC60PKc7mEj2wl1v-N?usp=sharing">
+      <img src="images/flower.jpg" class="image w3-round w3-image w3-opacity-min w3-hover-opacity-off" alt="Photo of Me" width="500" height="333">
+      </a>
+    </div>
+  </div>
+  <br><br>
+  <div class="w3-row">
+    <div class="w3-col m6 w3-center w3-padding-large">
+      <a target = "_blank" href = "https://colab.research.google.com/drive/13OKzmGLD38qJDJq-m9xrl37Vthg_rmha?usp=sharing">
+      <img src="images/titanic.jpg" class="image w3-round w3-image w3-opacity-min w3-hover-opacity-off" alt="Photo of Me" width="500" height="200">
+      </a>
+    </div>
+
+    
+    <div class="w3-col m6 w3-hide-small w3-padding-large " >
+      <br><br><br><br>
+      <h3 class="w3-center">Titanic</h3>
+      <div class = "w3-margin-bottom">
+      <p>Welcome to my website. I am lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+        dolor in reprehenderit in voluptate velit esse cillu</p>
+      </div>
+    </div>
+  </div>
+  <br><br>
+  <div class="w3-row">
+    
+    <div class="w3-col m6 w3-hide-small w3-padding-large " >
+      <br>
+      <h3 class="w3-center">Stock Prediction</h3>
+      <div class = "w3-margin-bottom">
+      <p>Welcome to my website. I am lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+        dolor in reprehenderit in voluptate velit esse cillu</p>
+      </div>
+    </div>
+
+    <div class="w3-col m6 w3-center w3-padding-large">
+      <a target = "_blank" href = "https://colab.research.google.com/drive/1B_vBOcjrz2sA74CI08URp2KnrOJrL3w5?usp=sharing">
+      <img src="images/stock.png" class="image w3-round w3-image w3-opacity-min w3-hover-opacity-off" alt="Photo of Me" width="500" height="200">
+      </a>
+    </div>
+
+  </div>
+  <br><br>
+  <div class="w3-row">
+    <div class="w3-col m6 w3-center w3-padding-large">
+      <a target = "_blank" href = "https://colab.research.google.com/drive/13OKzmGLD38qJDJq-m9xrl37Vthg_rmha?usp=sharing">
+      <img src="images/housePrice.jpg" class="image w3-round w3-image w3-opacity-min w3-hover-opacity-off" alt="Photo of Me" width="500" height="200">
+      </a>
+    </div>
+
+    
+    <div class="w3-col m6 w3-hide-small w3-padding-large " >
+      <br><br><br>
+      <h3 class="w3-center">House Price Prediction Model</h3>
+      <div class = "w3-margin-bottom">
+      <p>Welcome to my website. I am lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+        dolor in reprehenderit in voluptate velit esse cillu</p>
+      </div>
+    </div>
+  </div>
+  <br><br>
+-->
+  <div class="w3-row">
+    <!-- Hide this text on small devices -->
+    <div class="w3-col m6 w3-hide-small w3-padding-large " >
+      <h3 class="w3-center">Tutoring at Learn To Be</h3>
+      <div class = "w3-margin-bottom">
+      <p>Welcome to my website. I am lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+        dolor in reprehenderit in voluptate velit esse cillu</p>
+      </div>
+    </div>
+
+    <div class="w3-col m6 w3-center w3-padding-large">
+      <img src="images/tutor.png" class="image w3-round w3-image w3-opacity-min w3-hover-opacity-off" alt="Photo of Me" width="500" height="200">
+    </div>
+
+  </div>
+  <br><br>
+  <div class="w3-row">
+    
+    <div class="w3-col m6 w3-center w3-padding-large">
+      <br><br>
+      <a target = "_blank" href = "">
+      <img src="images/Inspirit.png" class="image w3-round w3-image w3-opacity-min w3-hover-opacity-off" alt="Photo of Me" width="500" height="200" style = "background-color: white;">
+      </a>
+    </div>
+
+    <!-- Hide this text on small devices -->
+    <div class="w3-col m6 w3-hide-small w3-padding-large " >
+      <h3 class="w3-center">Inspirit AI Internship</h3>
+      <div class = "w3-margin-bottom">
+      <p>Welcome to my website. I am lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+        dolor in reprehenderit in voluptate velit esse cillu</p>
+      </div>
+    </div>
+  </div>
+  <br><br>
+  <div class="w3-row">
+    <!-- Hide this text on small devices -->
+    <div class="w3-col m6 w3-hide-small w3-padding-large " >
+      <h3 class="w3-center">ASDRP-Research</h3>
+      <div class = "w3-margin-bottom">
+      <p>Welcome to my website. I am lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+        dolor in reprehenderit in voluptate velit esse cillu</p>
+      </div>
+    </div>
+
+    <div class="w3-col m6 w3-center w3-padding-large">
+      <br><br>
+      <img src="images/ASDRP.png" class="image w3-round w3-image w3-opacity-min w3-hover-opacity-off" alt="Photo of Me" width="500" height="200" style = "background-color: white;">
+    </div>
+
+  </div>
+  <br><br>
+  <h3 class="w3-center">AI Models I've Built</h3>
+  <br>
+  <div class="container">
+    
+    <a href = "https://colab.research.google.com/drive/13OKzmGLD38qJDJq-m9xrl37Vthg_rmha?usp=share_link" target = "_blank">
+    <div class="box w3-opacity-min w3-hover-opacity-off">
+      <i class="fa fa-folder top-left w3-text-amber w3-large" ></i>
+      <i class="fa fa-external-link top-right w3-hover-text-amber " style:hover = "color:darkblue"></i>
+      <br>
+      <h3 style = "color:black">Titanic Survivability</h3>
+      <br>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin euismod, metus et tempor blandit, lectus tellus malesuada nulla, vel suscipit justo sapien eget magna.</p>
+      <div class = "bottom"><p style = "color:lightgray;font-size:x-small;">Pandas; Keras; PyTorch; MatPlotLib;SkLearn</p></div>
+    </div>
+  </a>
+  <a href = "https://colab.research.google.com/drive/13OKzmGLD38qJDJq-m9xrl37Vthg_rmha?usp=share_link" target = "_blank">
+    <div class="box w3-opacity-min w3-hover-opacity-off">
+      <i class="fa fa-folder top-left w3-text-amber w3-large" ></i>
+      <i class="fa fa-external-link top-right w3-hover-text-amber" style:hover = "color:darkblue"></i>
+      <br>
+      <h3 style = "color:black">House Price Prediction</h3>
+      <br>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin euismod, metus et tempor blandit, lectus tellus malesuada nulla, vel suscipit justo sapien eget magna.</p>
+      <div class = "bottom"><p style = "color:lightgray;font-size:x-small;">Pandas; Keras; PyTorch; MatPlotLib</p></div>
+    </div>
+    </a>
+    <a href = "https://colab.research.google.com/drive/13OKzmGLD38qJDJq-m9xrl37Vthg_rmha?usp=share_link" target = "_blank">
+    <div class="box w3-opacity-min w3-hover-opacity-off">
+      <i class="fa fa-folder top-left w3-text-amber w3-large" ></i>
+      <i class="fa fa-external-link top-right w3-hover-text-amber" style:hover = "color:darkblue"></i>
+      <br>
+      <h3 style = "color:black">Stock Prediction</h3>
+      <br>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin euismod, metus et tempor blandit, lectus tellus malesuada nulla, vel suscipit justo sapien eget magna.</p>
+      <div class = "bottom"><p style = "color:lightgray;font-size:x-small;">Pandas; Keras; PyTorch; MatPlotLib</p></div>
+    </div>
+    </a>
+    <a href = "https://colab.research.google.com/drive/13OKzmGLD38qJDJq-m9xrl37Vthg_rmha?usp=share_link" target = "_blank">
+    <div class="box w3-opacity-min w3-hover-opacity-off">
+      <i class="fa fa-folder top-left w3-text-amber w3-large" ></i>
+      <i class="fa fa-external-link top-right w3-hover-text-amber" style:hover = "color:darkblue"></i>
+      <br>
+      <h3 style = "color:black">Malignant or Benign</h3>
+      <br>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin euismod, metus et tempor blandit, lectus tellus malesuada nulla, vel suscipit justo sapien eget magna.</p>
+      <div class = "bottom"><p style = "color:lightgray;font-size:x-small;">Pandas; Keras; PyTorch; MatPlotLib</p></div>
+    </div>
+    </a>
+    <a href = "https://colab.research.google.com/drive/13OKzmGLD38qJDJq-m9xrl37Vthg_rmha?usp=share_link" target = "_blank">
+    <div class="box w3-opacity-min w3-hover-opacity-off">
+      <i class="fa fa-folder top-left w3-text-amber w3-large" ></i>
+      <i class="fa fa-external-link top-right w3-hover-text-amber" style:hover = "color:darkblue"></i>
+      <br>
+      <h3 style = "color:black">Yelp Review:Good or Bad</h3>
+      <br>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin euismod, metus et tempor blandit, lectus tellus malesuada nulla, vel suscipit justo sapien eget magna.</p>
+      <div class = "bottom"><p style = "color:lightgray;font-size:x-small;">Pandas; Keras; PyTorch; MatPlotLib</p></div>
+    </div>
+    </a>
+    <a href = "https://colab.research.google.com/drive/13OKzmGLD38qJDJq-m9xrl37Vthg_rmha?usp=share_link" target = "_blank">
+    <div class="box w3-opacity-min w3-hover-opacity-off">
+      <i class="fa fa-folder top-left w3-text-amber w3-large" ></i>
+      <i class="fa fa-external-link top-right w3-hover-text-amber" style:hover = "color:darkblue"></i>
+      <br>
+      <h3 style = "color:black">Dog Vs. Road Detection</h3>
+      <br>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin euismod, metus et tempor blandit, lectus tellus malesuada nulla, vel suscipit justo sapien eget magna.</p>
+      <div class = "bottom"><p style = "color:lightgray;font-size:x-small;">Pandas; Keras; PyTorch; MatPlotLib</p></div>
+    </div>
+    </a>
+    <!-- Repeat the above code for 4 more boxes -->
+  </div>
+  <br><br><br>
+  <h3 class="w3-center">Games I've Built:</h3>
+  <br>
+  <div>
+    <!-- Responsive Grid. Four columns on tablets, laptops and desktops. Will stack on mobile devices/small screens (100% width) -->
+    <div class="w3-row-padding w3-center">
+      <div class="w3-col m3">
+        <img src="images/Archery.png" style="width:100%" onclick="onClick(this)" class="w3-round w3-image w3-opacity w3-hover-opacity-off" alt="The mist over the mountains">
+        <p>3D-Archery Game</p>
+      </div>
+  
+      <div class="w3-col m3">
+        <img src="images/avengers.png" style="width:100%" onclick="onClick(this)" class="w3-round w3-image w3-opacity w3-hover-opacity-off" alt="Coffee beans">
+        <p>Which Avenger are you?</p>
+      </div>
+  
+      <div class="w3-col m3">
+        <img src="images/fortune.png" style="width:100%" onclick="onClick(this)" class="w3-round w3-image w3-opacity w3-hover-opacity-off" alt="Bear closeup">
+        <p>Fortune Cookie</p>
+      </div>
+  
+      <div class="w3-col m3">
+        <img src="images/plantsVSZombie.png" style="width:100%" onclick="onClick(this)" class="w3-round w3-image w3-opacity w3-hover-opacity-off" alt="Quiet ocean">
+        <p>3D-Plants Vs. Zombies</p>
+      </div>
+    </div>
+  
+    <div class="w3-row-padding w3-center w3-section">
+      <div class="w3-col m3">
+        <img src="images/fruits.png" style="width:100%" onclick="onClick(this)" class="w3-round w3-image w3-opacity w3-hover-opacity-off" alt="The mist">
+        <p>Friuit Zen</p>
+      </div>
+  
+      <div class="w3-col m3">
+        <img src="images/games.png" style="width:100%" onclick="onClick(this)" class="w3-round w3-image w3-opacity w3-hover-opacity-off" alt="My beloved typewriter">
+        <p>3-Games</p>
+      </div>
+  
+      <div class="w3-col m3">
+        <img src="images/Memes.jpg" style="width:100%" onclick="onClick(this)" class="w3-round w3-image w3-opacity w3-hover-opacity-off" alt="Empty ghost train">
+        <p>Meme Generator</p>
+      </div>
+  
+      <div class="w3-col m3">
+        <img src="images/paint.png" style="width:100%" onclick="onClick(this)" class="w3-round w3-image w3-opacity w3-hover-opacity-off" alt="Sailing">
+        <p>Free Paint</p>
+      </div>
+    </div>
+  </div>
+
+  <p class="w3-large w3-center w3-padding-16">Coding:</p>
+  <p class="w3-wide"><i class="fa fa-piano"></i>C++</p>
+  <div class="w3-light-grey">
+    <div class="w3-container w3-padding-small w3-highway-blue w3-center" style="width:90%">90%</div>
+  </div>
+  <p class="w3-wide"><i class="fa fa-laptop"></i>Python</p>
+  <div class="w3-light-grey">
+    <div class="w3-container w3-padding-small w3-highway-blue w3-center" style="width:85%">85%</div>
+  </div>
+  <p class="w3-wide"><i class="fa fa-"></i>Java</p>
+  <div class="w3-light-grey">
+    <div class="w3-container w3-padding-small w3-highway-blue w3-center" style="width:75%">75%</div>
+  </div>
+  
+  <p class="w3-wide"><i class="fa fa-"></i>HTML/CSS/JS/SQL/Flask(Web Dev.)</p>
+  <div class="w3-light-grey">
+    <div class="w3-container w3-padding-small w3-highway-blue w3-center" style="width:100%">100%</div>
+  </div>
+  
+  <p class="w3-wide"><i class="fa fa-"></i>Machine Learning(Deep Learning)</p>
+  <div class="w3-light-grey">
+    <div class="w3-container w3-padding-small w3-highway-blue w3-center" style="width:86%">86%</div>
+  </div>
+  
+  <br><br>
+  <h3 class="w3-center">Certification</h3>
+  <br>
+  <div>
+    <!-- Responsive Grid. Four columns on tablets, laptops and desktops. Will stack on mobile devices/small screens (100% width) -->
+    <div class="w3-row-padding w3-center">
+     <div class="w3-col m3">
+        <img src="images/Ethan Varghese - Intro to Machine Learning.png" style="width:100%" onclick="onClick(this)" class="w3-round w3-image w3-opacity w3-hover-opacity-off" alt="The mist over the mountains">
+        <p>Intro to Macine Learning</p>
+      </div>
+
+      <div class="w3-col m3">
+        <img src="images/Ethan Varghese - Intro to Machine Learning.png" style="width:100%" onclick="onClick(this)" class="w3-round w3-image w3-opacity w3-hover-opacity-off" alt="Coffee beans">
+        <p>Intermediate Machine Leaning</p>
+      </div>
+
+      <div class="w3-col m3">
+        <img src="images/Ethan Varghese - Intro to Machine Learning.png" style="width:100%" onclick="onClick(this)" class="w3-round w3-image w3-opacity w3-hover-opacity-off" alt="Bear closeup">
+        <p>Pandas</p>
+      </div>
+
+      <div class="w3-col m3">
+        <img src="images/Ethan Varghese - Intro to Machine Learning.png" style="width:100%" onclick="onClick(this)" class="w3-round w3-image w3-opacity w3-hover-opacity-off" alt="Quiet ocean">
+        <p>Deep Learning</p>
+      </div>
+    </div>
+
+    <div class="w3-row-padding w3-center w3-section">
+      <div class="w3-col m3">
+        <img src="images/JavaCertificate.png" style="width:100%" onclick="onClick(this)" class="w3-round w3-image w3-opacity w3-hover-opacity-off" alt="The mist">
+        <p>Java-OOP</p>
+      </div>
+
+      <div class="w3-col m3">
+        <img src="images/CapstoneCertificate.png" style="width:100%" onclick="onClick(this)" class="w3-round w3-image w3-opacity w3-hover-opacity-off" alt="My beloved typewriter">
+        <p>Capstone Project</p>
+      </div>
+
+      <div class="w3-col m3">
+        <img src="images/UserInterfaceCertificate.png" style="width:100%" onclick="onClick(this)" class="w3-round w3-image w3-opacity w3-hover-opacity-off" alt="Empty ghost train">
+        <p>User Interface Development</p>
+      </div>
+
+      <div class="w3-col m3">
+        <img src="images/VirtualRealityCertificate.png" style="width:100%" onclick="onClick(this)" class="w3-round w3-image w3-opacity w3-hover-opacity-off" alt="Sailing">
+        <p>Virtual Reality</p>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal for full size images on click-->
+<div id="modal01" class="w3-modal w3-black" onclick="this.style.display='none'">
+  <span class="w3-button w3-large w3-black w3-display-topright" title="Close Modal Image"><i class="fa fa-remove"></i></span>
+  <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+    <img id="img01" class="w3-image">
+    <p id="caption" class="w3-opacity w3-large"></p>
+  </div>
+</div>
+
+<!-- Third Parallax Image with Portfolio Text -->
+<div rel = "preload" class="bgimg-3 w3-display-container w3-opacity-min" id = "contact">
+  <div class="w3-display-middle">
+     <span class="w3-xxlarge w3-text-white w3-wide"><i class="fa fa-envelope"></i>CONTACT</span>
+  </div>
+</div>
+
+<!-- Container (Contact Section) -->
+<div class="w3-content w3-container w3-padding-64" >
+  <h3 class="w3-center">Contact Me</h3>
+  <p class="w3-center"><em>I'd love your feedback!</em></p>
+
+  <div class="w3-row w3-padding-32 w3-section">
+    
+    <div class="w3-col m6 w3-container ">
+      <br>
+      <img src="images/email.gif" class="w3-round w3-image" style="width:100%;">
+    </div>
+    <div class="w3-col m6 w3-panel">
+      <div class="w3-large w3-margin-bottom">
+        <a href = "https://www.google.com/maps/place/California/@37.1930145,-123.7992228,6z/data=!3m1!4b1!4m5!3m4!1s0x808fb9fe5f285e3d:0x8b5109a227086f55!8m2!3d36.778261!4d-119.4179324" style = "text-decoration: none;" target="_blank"><i class="fa fa-map-marker fa-fw w3-hover-text-red w3-xlarge w3-margin-right"></i></a> California, US<br>
+        <a href = "mailto:vargheseethan07@gmail.com? subject = Website User" style = "text-decoration: none;"><i class="fa fa-envelope fa-fw w3-hover-text-grey w3-xlarge w3-margin-right"></i></a> Email: vargheseethan07@gmail.com<br>
+      </div>
+      <hr>
+      <form  onsubmit = "sendEmail(); reset(); return false;">
+        <div class="w3-row-padding " style="margin:0 -16px 8px -16px; width: 107%; text-align: center;">
+          <div class="w3-half">
+            <input class="w3-input w3-border" type="text" placeholder="Name" required name="Name">
+          </div>
+          <div class="w3-half">
+            <input class="w3-input w3-border" id = "email" type="text" placeholder="Email" required name="Email">
+          </div>
+        </div>
+        <input class="w3-input w3-border " id = "para"type="text" placeholder="Message" required name="Message" style = "width: 100%">
+        <button class="w3-button w3-black w3-right w3-section" type="submit">
+          <i class="fa fa-paper-plane"></i> SEND MESSAGE
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+
+
+<!-- Footer -->
+<footer class="w3-center w3-padding-32 w3-white " style = "height: 200px;-webkit-transition: all 1s ease;transition: all 1s ease;">
+  <div class="w3-row w3-padding-16 w3-section w3-center" style = "height:100px">
+  
+  <a href="#home" class="w3-button w3-light-grey" ><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+  <div class="w3-xlarge w3-section">
+    <i class="fa fa-facebook-official w3-hover-opacity"></i>
+    <i class="fa fa-instagram w3-hover-opacity"></i>
+    <i class="fa fa-snapchat w3-hover-opacity"></i>
+    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+    <i class="fa fa-twitter w3-hover-opacity"></i>
+    <i class="fa fa-linkedin w3-hover-opacity"></i>
+  </div>
+  
+  
+  </div>
+</footer>
+
+<script>
+
+var loader;
+function refreshPage(){
+    window.location.reload();
+} 
+
+function loadNow(opacity) {
+    if (opacity <= 0) {
+        displayContent();
+        
+    } else {
+        loader.style.opacity = opacity;
+        window.setTimeout(function() {
+          loadNow(opacity-0.01); 
+        }, 55);
+    }
+    
+}
+
+
+
+
+function displayContent() {
+    loader.style.display = 'none';
+    document.getElementById('content').style.display = 'block';
+  
+    
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+    loader = document.getElementById('loader');
+    loadNow(1);
+});
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
+
+// Modal Image Gallery
+
+
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML = element.alt;
+}
+
+// Change style of navbar on scroll
+window.onscroll = function() {myFunction()};
+function myFunction() {
+    var navbar = document.getElementById("myNavbar");
+    
+}
+
+// Used to toggle the menu on small screens when clicking on the menu button
+function toggleFunction() {
+    var x = document.getElementById("navDemo");
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+    } else {
+        x.className = x.className.replace(" w3-show", "");
+    }
+}
+$(".bgimg-1 ").click(helloWorld);
+function helloWorld(){
+  $(".HelloWorld").text("Hello World!");
+}
+function sendEmail(){
+  Email.send({
+    Host : "smtp.gmail.com",
+    Username : "vargheseethan07@gmail.com",
+    Password : "Nathanael@2014",
+    To : 'vargheseethan07@gmail.com',
+    From : document.getElementById("email").value,
+    Subject : "New Contact Form Enquiry",
+    Body : document.getElementById("para").value
+}).then(
+  message => alert(message)
+);
+}
+const header = document.querySelector("header");
+const sectionOne = document.querySelector(".home-intro");
+
+const faders = document.querySelectorAll(".fade-in");
+const sliders = document.querySelectorAll(".slide-in");
+
+const sectionOneOptions = {
+  rootMargin: "-200px 0px 0px 0px"
+};
+
+const sectionOneObserver = new IntersectionObserver(function(
+  entries,
+  sectionOneObserver
+) {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) {
+      header.classList.add("nav-scrolled");
+    } else {
+      header.classList.remove("nav-scrolled");
+    }
+  });
+},
+sectionOneOptions);
+
+sectionOneObserver.observe(sectionOne);
+
+const appearOptions = {
+  threshold: 0,
+  rootMargin: "0px 0px -250px 0px"
+};
+
+const appearOnScroll = new IntersectionObserver(function(
+  entries,
+  appearOnScroll
+) {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) {
+      return;
+    } else {
+      entry.target.classList.add("appear");
+      appearOnScroll.unobserve(entry.target);
+    }
+  });
+},
+appearOptions);
+
+faders.forEach(fader => {
+  appearOnScroll.observe(fader);
+});
+
+sliders.forEach(slider => {
+  appearOnScroll.observe(slider);
+});
+
+
+</script>
+
+</body>
+</html>
